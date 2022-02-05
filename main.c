@@ -27,19 +27,6 @@ void printvalues(nodet *head) {
 		temp = temp->prev;
 	}
 }
-
-void getnexts(nodet *head){
-	nodet *temp = head;
-	nodet *temp2 = head;
-	while (temp != NULL){
-		temp = temp->prev;
-		if (temp == NULL){
-			break;
-		}
-		temp->next = temp2;
-		temp2 = temp;
-	}
-}
 void printvaluesnormally (nodet *tail){
 	nodet *temp = tail;
 	while (temp != NULL){
@@ -60,7 +47,6 @@ int main(int argc, char *argv[]) {
 		temp = createnode(i, temp);
 		head = temp;
 	}
-	getnexts (head);
 	printvalues(head);
 	printvaluesnormally(tail);
 	return 0;
